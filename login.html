@@ -1,0 +1,26 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+<head><title>로그인</title></head>
+<body>
+  <h2>로그인</h2>
+  <form id="loginForm">
+    아이디: <input type="text" id="username"><br>
+    비밀번호: <input type="password" id="password"><br>
+    <button type="submit">로그인</button>
+  </form>
+  <script>
+    document.getElementById('loginForm').onsubmit = function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if(user === 'user' && pass === 'password123') {
+        // 로그인 성공 시 ansim.html 페이지로 이동
+        window.location.href = 'ansim.html';
+      } else {
+        alert('아이디 또는 비밀번호가 틀렸습니다.');
+      }
+    }
+  </script>
+</body>
+</html>
